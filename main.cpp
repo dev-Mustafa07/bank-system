@@ -27,7 +27,6 @@ void accountbalance()
     std::cout << "Passkey: 25082010\n";
     std::cout << "Your current balanace: " << currentbalance << " /=\n\n";
 }
-
 int main()
 {
     std::cout << "=================================";
@@ -35,39 +34,38 @@ int main()
     std::cout << "=================================\n\n";
     char userchoice;
     int bankuserchoice;
-    do
+
+    { // User Bank Otions
+        std::cout << "Please enter Valid no\n";
+        std::cout << "---------------------------\n";
+        std::cout << "1.Deposit Money\n";
+        std::cout << "2.Withdraw Money\n";
+        std::cout << "3.Check Current Balance\n";
+        std::cout << "4.Account Detils\n";
+        std::cout << "5.Exit\n";
+        std::cout << "---------------------------\n";
+        std::cout << "\nEnter Number: ";
+        std::cin >> bankuserchoice;
+    }
+    if (bankuserchoice == 1)
     {
-        { // User Bank Otions
-            std::cout << "Please enter Valid no\n";
-            std::cout << "---------------------------\n";
-            std::cout << "1.Deposit Money\n";
-            std::cout << "2.Withdraw Money\n";
-            std::cout << "3.Check Current Balance\n";
-            std::cout << "4.Account Detils\n";
-            std::cout << "5.Exit\n";
-            std::cout << "---------------------------\n";
-            std::cout << "\nEnter Number: ";
-            std::cin >> bankuserchoice;
-        }
-        if (bankuserchoice == 1)
-        {
-            depositmoney();
-        }
-        else if (bankuserchoice == 2)
-        {
-            withdrawmoney();
-        }
-        else if (bankuserchoice == 3)
-        {
-            checkcurrentbalance();
-        }
-        else if (bankuserchoice == 4)
-        {
-            accountbalance();
-        }
-        std::cout << "\nDo you want to continue the Program: ";
-        std::cin >> userchoice;
-        std::cout << "\n";
-    } while (userchoice == 'y' || userchoice == 'Y');
+        depositmoney();
+    }
+    else if (bankuserchoice == 2)
+    {
+        withdrawmoney();
+    }
+    else if (bankuserchoice == 3)
+    {
+        checkcurrentbalance();
+    }
+    else if (bankuserchoice == 4)
+    {
+        accountbalance();
+    }
+    else if (bankuserchoice == 5){
+        // return 0;
+    }
+
     return 0;
 }
