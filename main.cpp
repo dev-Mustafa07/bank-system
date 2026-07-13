@@ -10,16 +10,23 @@ void depositmoney()
     std::cout << "Enter Money to Deposit: ";
     std::cin >> vardipositmoney;
     currentbalance += vardipositmoney;
+    std::cout << vardipositmoney << " is Deposit successfully!\n";
 }
 void withdrawmoney()
 {
-    if(varwithdrawmoney >= currentbalance){
-        std::cout << "Oops! Something Went Wrong.\n Withdraw amount is large can't perform operation";
-        
-    }
     std::cout << "Enter Money to Withdraw: ";
     std::cin >> varwithdrawmoney;
-    currentbalance -= varwithdrawmoney;
+    if (varwithdrawmoney > currentbalance)
+    {
+        std::cout << "------------------------------------------------------------------\n";
+        std::cout << "\tOops! Something Went Wrong.\n\tWithdraw amount is large can't perform operation";
+        std::cout << "\n------------------------------------------------------------------";
+    }
+    else
+    {
+        currentbalance -= varwithdrawmoney;
+        std::cout << varwithdrawmoney << " is Withdraw successfully!\n";
+    }
 }
 void checkcurrentbalance()
 {
@@ -27,9 +34,11 @@ void checkcurrentbalance()
 }
 void accountbalance()
 {
-    std::cout << "\nUsername: Muhammad Mustafa\n";
-    std::cout << "Passkey: 25082010\n";
-    std::cout << "Your current balance: " << currentbalance << " /=\n\n";
+    std::cout << "\n------------------------------------------------------";
+    std::cout << "\n\tUsername: Muhammad Mustafa\n";
+    std::cout << "\tPasskey: 25082010\n";
+    std::cout << "\tYour current balance: " << currentbalance << " /=\n";
+    std::cout << "\n------------------------------------------------------";
 }
 int main()
 {
@@ -71,7 +80,6 @@ int main()
         }
         else if (bankuserchoice == 5)
         {
-            
         }
         std::cout << "\nDo you want to continue the Program: ";
         std::cin >> userchoice;
